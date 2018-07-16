@@ -1,0 +1,1 @@
+Configuration for the payment method can be done in the addon settings.

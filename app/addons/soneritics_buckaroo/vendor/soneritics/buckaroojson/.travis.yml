@@ -1,0 +1,11 @@
+install: composer install
+language: php
+php:
+  - 7.1
+  - 7.2
+script:
+  - vendor/bin/phpcs --standard=PSR1,PSR2 Soneritics/Buckaroo/
+  - mkdir -p build/logs
+  - vendor/bin/phpunit --whitelist Soneritics/Buckaroo --coverage-clover build/logs/clover.xml Tests/
+after_success:
+  - travis_retry php vendor/bin/php-coveralls -v

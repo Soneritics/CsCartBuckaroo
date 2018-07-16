@@ -1,0 +1,19 @@
+{
+    "name": "soneritics/buckaroojson",
+    "type": "library",
+    "description": "Buckaroo PHP implementation",
+    "homepage": "https://github.com/Soneritics/BuckarooJSON",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7",
+        "squizlabs/php_codesniffer": "*",
+        "php-coveralls/php-coveralls": "*"
+    },
+    "autoload": {
+        "psr-4": {"Buckaroo\\": "Soneritics/Buckaroo/"}
+    }
+}

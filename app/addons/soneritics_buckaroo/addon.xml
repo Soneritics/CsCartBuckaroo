@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>soneritics_buckaroo</id>
+    <name>Soneritics Buckaroo</name>
+    <version>1.0</version>
+    <default_language>nl</default_language>
+    <priority>1000</priority>
+    <status>active</status>
+    <has_icon>Y</has_icon>
+    <settings>
+        <sections>
+            <section id="general">
+                <items>
+                    <item id="websitekey">
+                        <name>Website key</name>
+                        <type>input</type>
+                        <default_value></default_value>
+                    </item>
+                    <item id="secretkey">
+                        <name>Secret key</name>
+                        <type>input</type>
+                        <default_value></default_value>
+                    </item>
+                    <item id="test">
+                        <name>Test mode</name>
+                        <type>selectbox</type>
+                        <default_value>Y</default_value>
+                        <variants>
+                            <item id="N"><name>N</name></item>
+                            <item id="Y"><name>Y</name></item>
+                        </variants>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+    <translations>
+        <item lang="nl" for="soneritics_buckaroo">Soneritics Buckaroo</item>
+        <item lang="en" for="soneritics_buckaroo">Soneritics Buckaroo</item>
+        <item lang="de" for="soneritics_buckaroo">Soneritics Buckaroo</item>
+
+        <item lang="nl" for="soneritics_buckaroo_choose_bank">Kies uw bank</item>
+        <item lang="en" for="soneritics_buckaroo_choose_bank">Choose your bank</item>
+        <item lang="de" for="soneritics_buckaroo_choose_bank">Wähle deine Bank aus</item>
+
+        <item lang="nl" for="soneritics_buckaroo_dob">Geboortedatum</item>
+        <item lang="en" for="soneritics_buckaroo_dob">Date of birth</item>
+        <item lang="de" for="soneritics_buckaroo_dob">Geburtsdatum</item>
+
+        <item lang="nl" for="soneritics_buckaroo_mobile">Mobiel nummer</item>
+        <item lang="en" for="soneritics_buckaroo_mobile">Mobile number</item>
+        <item lang="de" for="soneritics_buckaroo_mobile">Mobilnummer</item>
+
+        <item lang="nl" for="soneritics_buckaroo_housenr">Huisnummer</item>
+        <item lang="en" for="soneritics_buckaroo_housenr">House nr</item>
+        <item lang="de" for="soneritics_buckaroo_housenr">Hausnummer</item>
+
+        <item lang="nl" for="soneritics_buckaroo_gender">Uw aanhef</item>
+        <item lang="en" for="soneritics_buckaroo_gender">Your gender</item>
+        <item lang="de" for="soneritics_buckaroo_gender">Ihre gender</item>
+
+        <item lang="nl" for="soneritics_buckaroo_male">Meneer</item>
+        <item lang="en" for="soneritics_buckaroo_male">Mr.</item>
+        <item lang="de" for="soneritics_buckaroo_male">Mr.</item>
+
+        <item lang="nl" for="soneritics_buckaroo_female">Mevrouw</item>
+        <item lang="en" for="soneritics_buckaroo_female">Ms.</item>
+        <item lang="de" for="soneritics_buckaroo_female">Ms.</item>
+
+        <item lang="nl" for="soneritics_buckaroo_afterpay_terms_head">Afterpay voorwaarden</item>
+        <item lang="en" for="soneritics_buckaroo_afterpay_terms_head">Afterpay terms</item>
+        <item lang="de" for="soneritics_buckaroo_afterpay_terms_head">Afterpay Bedingungen</item>
+
+        <item lang="nl" for="soneritics_buckaroo_afterpay_terms_body"><![CDATA[
+            Om gebruik te kunnen maken van achteraf betalen via Afterpay dient u akkoord te gaan met de voorwaarden.
+            Deze kunnen worden geraadpleegd op de website van Afterpay middels onderstaande links.
+            <ul>
+                <li><a href="http://www.afterpay.nl/consument-betalingsvoorwaarden" target="_blank">Afterpay voorwaarden voor Nederlandse klanten</a></li>
+                <li><a href="https://www.afterpay.be/be/footer/betalen-met-afterpay/betalingsvoorwaarden" target="_blank">Afterpay voorwaarden voor Belgische klanten</a></li>
+            </ul>
+        ]]></item>
+        <item lang="en" for="soneritics_buckaroo_afterpay_terms_body"><![CDATA[
+            To be able to use postpay via Afterpay, you must agree to the conditions.
+            These can be consulted on the Afterpay website using the links below.
+            <ul>
+                <li><a href="http://www.afterpay.nl/consument-betalingsvoorwaarden" target="_blank">Afterpay terms for Dutch customers</a></li>
+                <li><a href="https://www.afterpay.be/be/footer/betalen-met-afterpay/betalingsvoorwaarden" target="_blank">Afterpay terms for Belgian customers</a></li>
+            </ul>
+        ]]></item>
+        <item lang="de" for="soneritics_buckaroo_afterpay_terms_body"><![CDATA[
+            Um die Nachzahlung über Afterpay nutzen zu können, müssen Sie den Bedingungen zustimmen.
+            Diese können auf der Afterpay-Website unter den folgenden Links abgerufen werden.
+            <ul>
+                <li><a href="http://www.afterpay.nl/consument-betalingsvoorwaarden" target="_blank">Afterpay Bedingungen für niederländische Kunden</a></li>
+                <li><a href="https://www.afterpay.be/be/footer/betalen-met-afterpay/betalingsvoorwaarden" target="_blank">Afterpay Bedingungen für belgische Kunden</a></li>
+            </ul>
+        ]]></item>
+
+        <item lang="nl" for="soneritics_buckaroo_afterpay_terms_accept">Ik accepteer de voorwaarden van Afterpay</item>
+        <item lang="en" for="soneritics_buckaroo_afterpay_terms_accept">I agree to the Afterpay terms</item>
+        <item lang="de" for="soneritics_buckaroo_afterpay_terms_accept">Ich stimme den Afterpay Bedingungen zu</item>
+
+        <item lang="nl" for="soneritics_buckaroo_afterpay_header">
+            Voor achteraf betalen is het belangrijk dat u uw geboortedatum en mobiele telefoonnummer opgeeft.
+            Wanneer deze ontbreken, of uw geboortedatum onjuist is, zal Afterpay uw aanvraag afkeuren.
+        </item>
+        <item lang="en" for="soneritics_buckaroo_afterpay_header">
+            It is important to provide the correct date of birth, and the correct mobile number.
+            When these are invalid, it is likely that Afterpay will deny your request.
+        </item>
+        <item lang="de" for="soneritics_buckaroo_afterpay_header">
+            Es ist wichtig, das korrekte Geburtsdatum und die korrekte Handynummer anzugeben.
+            Wenn diese ungültig sind, wird Afterpay wahrscheinlich Ihre Anfrage ablehnen.
+        </item>
+    </translations>
+    <queries>
+        <item>
+            REPLACE INTO ?:payment_processors(processor, processor_script, processor_template, admin_template, callback, `type`) VALUES
+                ('Soneritics Buckaroo Bancontact / Mistercash', 'soneritics_buckaroo_bancontact.php',          'views/orders/components/payments/soneritics_buckaroo.tpl',           'soneritics_buckaroo.tpl', 'Y', 'P'),
+                ('Soneritics Buckaroo Creditcards',             'soneritics_buckaroo_creditcards.php',         'views/orders/components/payments/soneritics_buckaroo.tpl',           'soneritics_buckaroo.tpl', 'Y', 'P'),
+                ('Soneritics Buckaroo iDeal',                   'soneritics_buckaroo_ideal.php',               'views/orders/components/payments/soneritics_buckaroo_ideal.tpl',     'soneritics_buckaroo.tpl', 'Y', 'P'),
+                ('Soneritics Buckaroo Afterpay (Digiaccept)',   'soneritics_buckaroo_afterpay_digiaccept.php', 'views/orders/components/payments/soneritics_buckaroo_afterpay.tpl' , 'soneritics_buckaroo.tpl', 'Y', 'P')
+        </item>
+        <item>
+            CREATE TABLE IF NOT EXISTS ?:soneritics_buckaroo(
+                `order_id` MEDIUMINT(8) NOT NULL,
+                `transactionkey` VARCHAR(50) NOT NULL,
+                `invoice` VARCHAR(50) NOT NULL,
+                PRIMARY KEY (`invoice`, `transactionkey`)
+            )
+        </item>
+        <item for="uninstall">DELETE FROM ?:payment_processors WHERE processor LIKE 'Soneritics Buckaroo%'</item>
+        <!-- For historic reference, do not delete this table! <item for="uninstall">DROP TABLE IF EXISTS ?:soneritics_buckaroo</item>-->
+    </queries>
+</addon>

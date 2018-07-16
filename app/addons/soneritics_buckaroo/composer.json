@@ -1,0 +1,6 @@
+{
+  "minimum-stability": "stable",
+  "require": {
+    "soneritics/buckaroojson": "1.*"
+  }
+}
