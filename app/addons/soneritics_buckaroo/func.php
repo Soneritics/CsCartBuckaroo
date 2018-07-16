@@ -62,6 +62,16 @@ function fn_soneritics_buckaroo_get_ideal_issuers()
  */
 function fn_soneritics_buckaroo_start_payment(\Buckaroo\Services\Pay\AbstractPayService $service, array $orderInfo)
 {
+    fn_soneritics_buckaroo_start_payment_with_services([$service], $orderInfo);
+}
+
+/**
+ * Start a payment with multiple services to choose from, when more provided
+ * @param array $services
+ * @param array $orderInfo
+ */
+function fn_soneritics_buckaroo_start_payment_with_services(array $services, array $orderInfo)
+{
     $settings = new SoneriticsBuckarooSettings;
     $authentication = new \Buckaroo\Authentication\Authentication($settings->getSecretKey(), $settings->getWebsiteKey());
     $buckaroo = new \Buckaroo\Buckaroo($authentication, $settings->isTestMode());
@@ -71,14 +81,24 @@ function fn_soneritics_buckaroo_start_payment(\Buckaroo\Services\Pay\AbstractPay
             $orderInfo['order_id'] . '_' . $orderInfo['repaid'] :
             $orderInfo['order_id'];
 
-        $transactionRequest = $buckaroo->getTransactionRequest($service)
+        $transactionRequest = count($services) == 1 ?
+            $buckaroo->getTransactionRequest($services[0]) :
+            $buckaroo->getMultiServiceTransactionRequest();
+
+        if (count($services) != 1) {
+            foreach ($services as $service) {
+                $transactionRequest->addService($service);
+            }
+        }
+
+        $transactionResponse = $transactionRequest
             ->setAmountDebit($orderInfo['total'])
             ->setInvoice($orderId)
             ->setReturnURL(fn_url("payment_notification.soneritics_buckaroo?order_id=" . $orderInfo['order_id']))
             ->request();
 
         // Save the transaction key for later use
-        $transactionKey = $transactionRequest['Key'];
+        $transactionKey = $transactionResponse['Key'];
         $invoice = $orderId;
         db_query(
             "REPLACE INTO ?:soneritics_buckaroo(order_id, transactionkey, invoice) VALUES(?i, ?s, ?s)",
@@ -88,8 +108,8 @@ function fn_soneritics_buckaroo_start_payment(\Buckaroo\Services\Pay\AbstractPay
         );
 
         // If the user should be redirected to Buckaroo, do so
-        if (!empty($transactionRequest['RequiredAction']['RedirectURL'])) {
-            header('Location: ' . $transactionRequest['RequiredAction']['RedirectURL']);
+        if (!empty($transactionResponse['RequiredAction']['RedirectURL'])) {
+            header('Location: ' . $transactionResponse['RequiredAction']['RedirectURL']);
             die;
         }
 
