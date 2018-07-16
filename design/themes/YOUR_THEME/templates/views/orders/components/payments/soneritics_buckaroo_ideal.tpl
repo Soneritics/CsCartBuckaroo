@@ -1,7 +1,7 @@
 <div style="padding: 0 0 20px 20px">
     <div class="clearfix">
         <div class="control-group">
-            <p>{__("soneritics_buckaroo_choose_bank")}</p>
+            <p>{__("addons.soneritics_buckaroo.choose_bank")}</p>
             <div>
                 {foreach from=fn_soneritics_buckaroo_get_ideal_issuers() item=issuer key=key}
                     <input type="radio" value="{$key}" name="payment_info[ideal_issuer]" id="buckpay-{$key}">
