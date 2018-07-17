@@ -95,6 +95,7 @@ function fn_soneritics_buckaroo_start_payment_with_services(array $services, arr
             ->setAmountDebit($orderInfo['total'])
             ->setInvoice($orderId)
             ->setReturnURL(fn_url("payment_notification.soneritics_buckaroo?order_id=" . $orderInfo['order_id']))
+            ->setPushURL(fn_url("payment_notification.soneritics_buckaroo?order_id=" . $orderInfo['order_id']))
             ->request();
 
         // Save the transaction key for later use
