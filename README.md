@@ -17,3 +17,13 @@ This addon relies on the following Buckaroo SDK: https://github.com/Soneritics/B
  - Upload the files to your server
  - Install the Soneritics Buckaroo addon
  - Configure the payment methods
+
+### Styling
+You will probably want to add some styling. At least to the iDeal bank list :-)
+You can start with adding the following CSS to your theme's LESS file:
+```css
+#soneritics_buckaroo_banklist img {
+  max-width: 150px;
+  padding: 10px 0 10px 10px;
+}
+```
