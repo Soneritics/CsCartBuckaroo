@@ -48,7 +48,11 @@ function fn_soneritics_buckaroo_get_ideal_issuers()
 
             \Tygh\Registry::set($cacheKey, $issuers);
         } catch (Exception $e) {
-            fn_set_notification('E', 'Error fetching banks', 'An error occured fetching the iDeal bank list.');
+            fn_set_notification(
+                'E',
+                __('addons.soneritics_buckaroo.errors.fetchingbanks'),
+                __('addons.soneritics_buckaroo.errors.fetchingbanks_desc')
+            );
         }
     }
 
@@ -118,8 +122,15 @@ function fn_soneritics_buckaroo_start_payment_with_services(array $services, arr
         //fn_soneritics_buckaroo_validate_response($transactionRequest, $orderInfo['total'], $orderInfo['total'], $invoice);
         fn_soneritics_buckaroo_validate_payment((int)$orderInfo['order_id']);
     } catch (Exception $e) {
-        fn_set_notification('E', 'Error starting payment', 'The payment could not be started.');
-        fn_set_notification('I', $e->getMessage(), $e->getTraceAsString());
+        fn_set_notification(
+            'E',
+            __('addons.soneritics_buckaroo.errors.startpayment'),
+            __('addons.soneritics_buckaroo.errors.startpayment_desc')
+        );
+
+        if (defined('DEVELOPMENT')) {
+            fn_set_notification('I', '[DEV] ' . $e->getMessage(), $e->getTraceAsString());
+        }
     }
 }
 
@@ -141,9 +152,17 @@ function fn_soneritics_buckaroo_validate_payment(int $orderId)
     $paymentData = db_get_array("SELECT * FROM ?:soneritics_buckaroo WHERE order_id = ?i", $orderId);
 
     if (empty($orderInfo)) {
-        fn_set_notification('E', 'No order info', 'Order info could not be found');
+        fn_set_notification(
+            'E',
+            __('addons.soneritics_buckaroo.errors.emptyorderinfo'),
+            __('addons.soneritics_buckaroo.errors.emptyorderinfo_desc')
+        );
     } elseif (empty($paymentData)) {
-        fn_set_notification('E', 'No payment data', 'Payment data could not be found');
+        fn_set_notification(
+            'E',
+            __('addons.soneritics_buckaroo.errors.emptypaymentdata'),
+            __('addons.soneritics_buckaroo.errors.emptypaymentdata_desc')
+        );
     } else {
         $settings = new SoneriticsBuckarooSettings;
         $authentication = new \Buckaroo\Authentication\Authentication($settings->getSecretKey(), $settings->getWebsiteKey());
@@ -167,12 +186,17 @@ function fn_soneritics_buckaroo_validate_payment(int $orderId)
                     $result = true;
                 }
             } catch (Exception $e) {
-                fn_set_notification('W', 'Error fetching details', 'Could not get payment details');
+                fn_set_notification(
+                    'W',
+                    __('addons.soneritics_buckaroo.errors.fetchingdetails'),
+                    __('addons.soneritics_buckaroo.errors.fetchingdetails_desc')
+                );
             }
         }
 
         if ($result === false) {
-            fn_set_notification('E', 'Unknown error', 'An unknown error occured');
+            // The fn_order_placement_routines() function handles this notification
+            //fn_set_notification('E', 'Unknown error', 'An unknown error occured');
         }
 
         fn_order_placement_routines('route', $orderId);
@@ -193,11 +217,19 @@ function fn_soneritics_buckaroo_validate_response(array $response, int $orderId,
         empty($response['AmountDebit']) ||
         empty($response['Status']['Code']['Code'])
     ) {
-        fn_set_notification('W', 'Could not process', 'Could not process payment details');
+        fn_set_notification(
+            'W',
+            __('addons.soneritics_buckaroo.errors.responseprocessing'),
+            __('addons.soneritics_buckaroo.errors.responseprocessing_desc')
+        );
         return false;
     } else {
         if ($response['Invoice'] != $invoiceNr || $response['AmountDebit'] != $amount) {
-            fn_set_notification('E', 'Error checking payment', 'Invoice nr does not match!');
+            fn_set_notification(
+                'E',
+                __('addons.soneritics_buckaroo.errors.responseinvoicenrmatch'),
+                __('addons.soneritics_buckaroo.errors.responseinvoicenrmatch')
+            );
             return false;
         } else {
             $statusCode = (int)$response['Status']['Code']['Code'];
@@ -221,7 +253,6 @@ function fn_soneritics_buckaroo_validate_response(array $response, int $orderId,
  */
 function fn_soneritics_buckaroo_set_order_state(int $orderId, int $statusCode, string $description)
 {
-    $csCartOrderState = '';
     switch ($statusCode) {
         case \Buckaroo\Enums\PaymentStatus::SUCCESS:
             $csCartOrderState = 'P';

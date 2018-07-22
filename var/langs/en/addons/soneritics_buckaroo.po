@@ -73,3 +73,59 @@ msgstr "I agree to the Afterpay terms"
 msgctxt "Languages::addons.soneritics_buckaroo.afterpay_header"
 msgid "It is important to provide the correct date of birth, and the correct mobile number. When these are invalid, it is likely that Afterpay will deny your request."
 msgstr "It is important to provide the correct date of birth, and the correct mobile number. When these are invalid, it is likely that Afterpay will deny your request."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingbanks"
+msgid "Error fetching banks"
+msgstr "Error fetching banks"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingbanks_desc"
+msgid "An error occured fetching the iDeal bank list."
+msgstr "An error occured fetching the iDeal bank list."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.startpayment"
+msgid "Error starting payment"
+msgstr "Error starting payment"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.startpayment_desc"
+msgid "The payment could not be started."
+msgstr "The payment could not be started."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptyorderinfo"
+msgid "No order info"
+msgstr "No order info"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptyorderinfo_desc"
+msgid "Order info could not be found"
+msgstr "Order info could not be found"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptypaymentdata"
+msgid "No payment data"
+msgstr "No payment data"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptypaymentdata_desc"
+msgid "Payment data could not be found"
+msgstr "Payment data could not be found"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingdetails"
+msgid "Error fetching details"
+msgstr "Error fetching details"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingdetails_desc"
+msgid "Could not get payment details from the payment provider"
+msgstr "Could not get payment details from the payment provider"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseprocessing"
+msgid "Could not process"
+msgstr "Could not process"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseprocessing_desc"
+msgid "Could not process payment details"
+msgstr "Could not process payment details"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseinvoicenrmatch"
+msgid "Error checking payment"
+msgstr "Error checking payment"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseinvoicenrmatch_desc"
+msgid "Invoice nr does not match!"
+msgstr "Invoice nr does not match!"

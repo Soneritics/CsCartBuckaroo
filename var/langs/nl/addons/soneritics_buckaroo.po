@@ -73,3 +73,59 @@ msgstr "Ik accepteer de voorwaarden van Afterpay"
 msgctxt "Languages::addons.soneritics_buckaroo.afterpay_header"
 msgid "It is important to provide the correct date of birth, and the correct mobile number. When these are invalid, it is likely that Afterpay will deny your request."
 msgstr "Voor achteraf betalen is het belangrijk dat u uw geboortedatum en mobiele telefoonnummer opgeeft. Wanneer deze ontbreken, of uw geboortedatum onjuist is, zal Afterpay uw aanvraag afkeuren."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingbanks"
+msgid "Error fetching banks"
+msgstr "Fout bij ophalen bankenlijst"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingbanks_desc"
+msgid "An error occured fetching the iDeal bank list."
+msgstr "Er is een fout opgetreden bij het ophalen van de iDeal bankenlijst."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.startpayment"
+msgid "Error starting payment"
+msgstr "Fout bij starten betaling"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.startpayment_desc"
+msgid "The payment could not be started."
+msgstr "De betaling kon niet gestart worden bij de Payment Provider."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptyorderinfo"
+msgid "No order info"
+msgstr "Ontbrekende order informatie"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptyorderinfo_desc"
+msgid "Order info could not be found"
+msgstr "Benodige order informatie kon niet gevonden worden."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptypaymentdata"
+msgid "No payment data"
+msgstr "Geen betaalgegevens"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptypaymentdata_desc"
+msgid "Payment data could not be found"
+msgstr "Betaalgegevens konden niet gevonden worden."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingdetails"
+msgid "Error fetching details"
+msgstr "Fout bij ophalen van details"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingdetails_desc"
+msgid "Could not get payment details from the payment provider"
+msgstr "Details van de betaling konden niet opgehaald worden bij de Payment Provider."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseprocessing"
+msgid "Could not process"
+msgstr "Fout bij verwerking"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseprocessing_desc"
+msgid "Could not process payment details"
+msgstr "De betaalgegevens konden niet verwerkt worden."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseinvoicenrmatch"
+msgid "Error checking payment"
+msgstr "Fout bij controleren betaling"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseinvoicenrmatch_desc"
+msgid "Invoice nr does not match!"
+msgstr "Er is onjuiste informatie gevonden. Het factuurnummer is niet bekend bij deze bestelling!"

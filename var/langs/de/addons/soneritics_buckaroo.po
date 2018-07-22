@@ -73,3 +73,59 @@ msgstr "Ich stimme den Afterpay Bedingungen zu"
 msgctxt "Languages::addons.soneritics_buckaroo.afterpay_header"
 msgid "It is important to provide the correct date of birth, and the correct mobile number. When these are invalid, it is likely that Afterpay will deny your request."
 msgstr "Es ist wichtig, das korrekte Geburtsdatum und die korrekte Handynummer anzugeben. Wenn diese ungültig sind, wird Afterpay wahrscheinlich Ihre Anfrage ablehnen."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingbanks"
+msgid "Error fetching banks"
+msgstr "Fehler beim Abrufen von Banken"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingbanks_desc"
+msgid "An error occured fetching the iDeal bank list."
+msgstr "Beim Abrufen der iDeal-Bankliste ist ein Fehler aufgetreten."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.startpayment"
+msgid "Error starting payment"
+msgstr "Fehler beim Starten der Zahlung"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.startpayment_desc"
+msgid "The payment could not be started."
+msgstr "Die Zahlung konnte nicht gestartet werden."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptyorderinfo"
+msgid "No order info"
+msgstr "Keine Bestellinformationen"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptyorderinfo_desc"
+msgid "Order info could not be found"
+msgstr "Bestellinfo konnte nicht gefunden werden"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptypaymentdata"
+msgid "No payment data"
+msgstr "Keine Zahlungsdaten"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.emptypaymentdata_desc"
+msgid "Payment data could not be found"
+msgstr "Zahlungsdaten konnten nicht gefunden werden"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingdetails"
+msgid "Error fetching details"
+msgstr "Fehler beim Abrufen der Details"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.fetchingdetails_desc"
+msgid "Could not get payment details from the payment provider"
+msgstr "Zahlungsdetails konnten vom Zahlungsanbieter nicht abgerufen werden"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseprocessing"
+msgid "Could not process"
+msgstr "Konnte nicht verarbeiten"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseprocessing_desc"
+msgid "Could not process payment details"
+msgstr "Zahlungsdetails konnten nicht verarbeitet werden"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseinvoicenrmatch"
+msgid "Error checking payment"
+msgstr "Fehler beim Überprüfen der Zahlung"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.responseinvoicenrmatch_desc"
+msgid "Invoice nr does not match!"
+msgstr "Rechnung Nr stimmt nicht überein!"
