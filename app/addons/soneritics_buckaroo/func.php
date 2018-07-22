@@ -48,11 +48,28 @@ function fn_soneritics_buckaroo_get_ideal_issuers()
 
             \Tygh\Registry::set($cacheKey, $issuers);
         } catch (Exception $e) {
-            fn_set_notification(
-                'E',
-                __('addons.soneritics_buckaroo.errors.fetchingbanks'),
-                __('addons.soneritics_buckaroo.errors.fetchingbanks_desc')
-            );
+            if (defined('DEVELOPMENT')) {
+                fn_set_notification(
+                    'E',
+                    __('addons.soneritics_buckaroo.errors.fetchingbanks'),
+                    __('addons.soneritics_buckaroo.errors.fetchingbanks_desc')
+                );
+            } else {
+                // When an error occured during the fetching of the banks, send an old, possibly outdated list
+                return [
+                    'ABNANL2A' => 'ABNAMRO Bank',
+                    'ASNBNL21' => 'ASN Bank',
+                    'BUNQNL2A' => 'bunq',
+                    'INGBNL2A' => 'ING Bank',
+                    'KNABNL2H' => 'Knab',
+                    'MOYONL21' => 'Moneyou',
+                    'RABONL2U' => 'Rabobank',
+                    'RBRBNL21' => 'RegioBank',
+                    'SNSBNL2A' => 'SNS Bank',
+                    'TRIONL2U' => 'Triodos Bank',
+                    'FVLBNL22' => 'Van Lanschot'
+                ];
+            }
         }
     }
 
