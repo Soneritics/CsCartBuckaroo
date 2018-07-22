@@ -135,8 +135,10 @@ function fn_soneritics_buckaroo_start_payment_with_services(array $services, arr
             die;
         }
 
+        // Display notifications if the PSP returned errors
+        fn_soneritics_buckaroo_set_afterpay_notifications($transactionResponse);
+
         // If the response is already received, process it
-        //fn_soneritics_buckaroo_validate_response($transactionRequest, $orderInfo['total'], $orderInfo['total'], $invoice);
         fn_soneritics_buckaroo_validate_payment((int)$orderInfo['order_id']);
     } catch (Exception $e) {
         fn_set_notification(
@@ -217,6 +219,19 @@ function fn_soneritics_buckaroo_validate_payment(int $orderId)
         }
 
         fn_order_placement_routines('route', $orderId);
+    }
+}
+
+/**
+ * Set notifications that came from AfterPay as errors
+ * @param array $response
+ */
+function fn_soneritics_buckaroo_set_afterpay_notifications(array $response)
+{
+    $statusSubCode = $response['Status']['SubCode']['Description'] ?? '';
+    $errorText = 'An error occurred while processing the transaction: ';
+    if ($response['ServiceCode'] === 'afterpaydigiaccept' && substr($statusSubCode, 0, strlen($errorText)) === $errorText) {
+        fn_set_notification('E', '', substr($statusSubCode, strlen($errorText)));
     }
 }
 
