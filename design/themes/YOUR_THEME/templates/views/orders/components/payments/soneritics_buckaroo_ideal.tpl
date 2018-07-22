@@ -6,8 +6,7 @@
                 {foreach from=fn_soneritics_buckaroo_get_ideal_issuers() item=issuer key=key}
                     <input type="radio" value="{$key}" name="payment_info[ideal_issuer]" id="buckpay-{$key}">
                     <label for="buckpay-{$key}">
-                        <img src="{'app/addons/soneritics_buckaroo/img/ideal/'|cat:"$key.png"}" style="height:20px;">
-                        {$issuer}
+                        <img src="{$images_dir}/addons/soneritics_buckaroo/ideal/{$key}.png" alt="{$issuer}" title="{$issuer}">
                     </label>
                     <br/>
                 {/foreach}
