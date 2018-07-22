@@ -129,3 +129,27 @@ msgstr "Fout bij controleren betaling"
 msgctxt "Languages::addons.soneritics_buckaroo.errors.responseinvoicenrmatch_desc"
 msgid "Invoice nr does not match!"
 msgstr "Er is onjuiste informatie gevonden. Het factuurnummer is niet bekend bij deze bestelling!"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.ideal.nobankchosen"
+msgid "No bank chosen"
+msgstr "Geen bank gekozen"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.ideal.nobankchosen_desc"
+msgid "No iDeal bank has been chosen."
+msgstr "Er is geen banlk voor de iDeal betaling geselecteerd."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.termsnotaccepted"
+msgid "Terms not accepted"
+msgstr "Voorwaarden zijn niet geaccepteerd"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.termsnotaccepted_desc"
+msgid "You did not accept the terms of use for AfterPay. You can only proceed after accepting."
+msgstr "De AfterPay voorwaarden moeten worden geaccepteerd om verder te gaan."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.invalidphone"
+msgid "Invalid phone number"
+msgstr "Ongeldig telefoonnummer"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.invalidphone_desc"
+msgid "The phone number is invalid. Please provide a correct phone number or your request will be denied."
+msgstr "Het opgegeven mobiele nummer is ongeldig. Voer aub een geldig telefoonnummer in, anders zal de aanvraag worden afgekeurd."

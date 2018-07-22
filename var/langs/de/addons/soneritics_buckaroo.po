@@ -129,3 +129,27 @@ msgstr "Fehler beim Überprüfen der Zahlung"
 msgctxt "Languages::addons.soneritics_buckaroo.errors.responseinvoicenrmatch_desc"
 msgid "Invoice nr does not match!"
 msgstr "Rechnung Nr stimmt nicht überein!"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.ideal.nobankchosen"
+msgid "No bank chosen"
+msgstr "Keine Bank gewählt"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.ideal.nobankchosen_desc"
+msgid "No iDeal bank has been chosen."
+msgstr "Es wurde keine iDeal-Bank ausgewählt."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.termsnotaccepted"
+msgid "Terms not accepted"
+msgstr "Bedingungen nicht akzeptiert"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.termsnotaccepted_desc"
+msgid "You did not accept the terms of use for AfterPay. You can only proceed after accepting."
+msgstr "Sie haben die Nutzungsbedingungen von AfterPay nicht akzeptiert. Sie können nur nach dem Akzeptieren fortfahren."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.invalidphone"
+msgid "Invalid phone number"
+msgstr "Ungültige Telefonnummer"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.invalidphone_desc"
+msgid "The phone number is invalid. Please provide a correct phone number or your request will be denied."
+msgstr "Die Telefonnummer ist ungültig. Bitte geben Sie eine korrekte Telefonnummer an oder Ihre Anfrage wird abgelehnt."

@@ -32,7 +32,11 @@ if (defined('PAYMENT_NOTIFICATION')) {
     die;
 } else {
     if (empty($order_info['payment_info']['ideal_issuer'])) {
-        fn_set_notification('E', 'No bank chosen', 'Choose a bank');
+        fn_set_notification(
+            'E',
+            __('addons.soneritics_buckaroo.errors.ideal.nobankchosen'),
+            __('addons.soneritics_buckaroo.errors.ideal.nobankchosen_desc')
+        );
         return false;
     } else {
         $service = (new \Buckaroo\Services\Pay\iDeal)->setIssuer($order_info['payment_info']['ideal_issuer']);

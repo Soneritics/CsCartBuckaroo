@@ -129,3 +129,28 @@ msgstr "Error checking payment"
 msgctxt "Languages::addons.soneritics_buckaroo.errors.responseinvoicenrmatch_desc"
 msgid "Invoice nr does not match!"
 msgstr "Invoice nr does not match!"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.ideal.nobankchosen"
+msgid "No bank chosen"
+msgstr "No bank chosen"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.ideal.nobankchosen_desc"
+msgid "No iDeal bank has been chosen."
+msgstr "No iDeal bank has been chosen."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.termsnotaccepted"
+msgid "Terms not accepted"
+msgstr "Terms not accepted"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.termsnotaccepted_desc"
+msgid "You did not accept the terms of use for AfterPay. You can only proceed after accepting."
+msgstr "You did not accept the terms of use for AfterPay. You can only proceed after accepting."
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.invalidphone"
+msgid "Invalid phone number"
+msgstr "Invalid phone number"
+
+msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.invalidphone_desc"
+msgid "The phone number is invalid. Please provide a correct phone number or your request will be denied."
+msgstr "The phone number is invalid. Please provide a correct phone number or your request will be denied."
+

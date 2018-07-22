@@ -32,10 +32,18 @@ if (defined('PAYMENT_NOTIFICATION')) {
     die;
 } else {
     if (empty($order_info['payment_info']['accepted_terms'])) {
-        fn_set_notification('E', 'Terms not accepted', 'Accept the terms!');
+        fn_set_notification(
+            'E',
+            __('addons.soneritics_buckaroo.errors.afterpay.termsnotaccepted'),
+            __('addons.soneritics_buckaroo.errors.afterpay.termsnotaccepted_desc')
+        );
         return false;
     } elseif (!fn_soneritics_buckaroo_is_valid_phonenumber($order_info['payment_info']['afterpay_phone_number'])) {
-        fn_set_notification('E', 'Terms not accepted', 'Accept the terms!');
+        fn_set_notification(
+            'E',
+            __('addons.soneritics_buckaroo.errors.afterpay.invalidphone'),
+            __('addons.soneritics_buckaroo.errors.afterpay.invalidphone_desc')
+        );
         return false;
     } else {
         $service = fn_soneritics_buckaroo_get_afterpay_service($order_info);
