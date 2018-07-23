@@ -136,7 +136,7 @@ msgstr "Geen bank gekozen"
 
 msgctxt "Languages::addons.soneritics_buckaroo.errors.ideal.nobankchosen_desc"
 msgid "No iDeal bank has been chosen."
-msgstr "Er is geen banlk voor de iDeal betaling geselecteerd."
+msgstr "Er is geen bank gekozen voor de iDeal betaling."
 
 msgctxt "Languages::addons.soneritics_buckaroo.errors.afterpay.termsnotaccepted"
 msgid "Terms not accepted"
