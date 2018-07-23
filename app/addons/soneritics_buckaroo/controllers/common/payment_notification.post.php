@@ -27,7 +27,11 @@ if (!defined('BOOTSTRAP')) { die('Access denied'); }
 if ($mode == 'soneritics_buckaroo' && !empty($_GET['order_id'])) {
     $orderId = (int)$_GET['order_id'];
     fn_soneritics_buckaroo_validate_payment($orderId);
+    fn_order_placement_routines('route', $orderId);
 } elseif ($mode == 'soneritics_buckaroo') {
     $orderId = (int)$_POST['brq_invoicenumber'];
     fn_soneritics_buckaroo_validate_payment($orderId);
+
+    fn_flush();
+    die('OK');
 }

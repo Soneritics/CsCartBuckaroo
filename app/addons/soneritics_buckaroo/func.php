@@ -116,7 +116,7 @@ function fn_soneritics_buckaroo_start_payment_with_services(array $services, arr
             ->setAmountDebit($orderInfo['total'])
             ->setInvoice($orderId)
             ->setReturnURL(fn_url("payment_notification.soneritics_buckaroo?order_id=" . $orderInfo['order_id']))
-            ->setPushURL(fn_url("payment_notification.soneritics_buckaroo?order_id=" . $orderInfo['order_id']))
+            ->setPushURL(fn_url("payment_notification.soneritics_buckaroo"))
             ->request();
 
         // Save the transaction key for later use
@@ -164,7 +164,6 @@ function fn_soneritics_buckaroo_validate_payment(int $orderId)
 
     // If already sent or paid, do not change the state
     if (in_array($orderInfo['status'], ['C', 'P'])) {
-        fn_order_placement_routines('route', $orderId);
         return;
     }
 
@@ -212,13 +211,6 @@ function fn_soneritics_buckaroo_validate_payment(int $orderId)
                 );
             }
         }
-
-        if ($result === false) {
-            // The fn_order_placement_routines() function handles this notification
-            //fn_set_notification('E', 'Unknown error', 'An unknown error occured');
-        }
-
-        fn_order_placement_routines('route', $orderId);
     }
 }
 
@@ -311,8 +303,13 @@ function fn_soneritics_buckaroo_set_order_state(int $orderId, int $statusCode, s
         'order_status' => $csCartOrderState
     ];
 
-    fn_change_order_status($orderId, $csCartOrderState, '', false);
-    fn_finish_payment($orderId, $ppResponse);
+    $currentOrderStatus = db_get_field('SELECT status FROM ?:orders WHERE order_id = ?i', $orderId);
+
+    // Only proceed if the current order is not yet completed and if there's an actual status change
+    if (!in_array($currentOrderStatus, ['C']) && $csCartOrderState != $currentOrderStatus) {
+        fn_change_order_status($orderId, $csCartOrderState, '', false);
+        fn_finish_payment($orderId, $ppResponse);
+    }
 }
 
 /**
