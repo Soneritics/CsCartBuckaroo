@@ -24,7 +24,7 @@
  */
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
-//fn_register_hooks();
+fn_register_hooks('summary_get_payment_method');
 
 ini_set( 'serialize_precision', -1 );
 

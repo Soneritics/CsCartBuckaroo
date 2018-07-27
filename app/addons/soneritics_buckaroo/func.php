@@ -25,6 +25,26 @@
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
 /**
+ * In the admin area, remove the template for the addon's payment methods
+ * @param $paymentId
+ * @param $payment
+ */
+function fn_soneritics_buckaroo_summary_get_payment_method($paymentId, &$payment)
+{
+    $processorName = 'Soneritics Buckaroo';
+
+    // Only do this in the admin area
+    if (AREA === 'A' &&
+        !empty($paymentId) &&
+        !empty($payment['processor']) &&
+        strlen($payment['processor']) > strlen($processorName) &&
+        substr($payment['processor'], 0, strlen($processorName)) === $processorName
+    ) {
+        $payment['template'] = '';
+    }
+}
+
+/**
  * Get the current iDeal issuers list
  * @return array
  * @throws \Tygh\Exceptions\DeveloperException
