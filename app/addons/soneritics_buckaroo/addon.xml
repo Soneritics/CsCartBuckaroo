@@ -36,10 +36,10 @@
     </settings>
     <queries>
         <item>
-            REPLACE INTO ?:payment_processors(processor, processor_script, processor_template, admin_template, callback, `type`) VALUES
-                ('Soneritics Buckaroo Bancontact / Mistercash', 'soneritics_buckaroo_bancontact.php',          'views/orders/components/payments/soneritics_buckaroo.tpl',           'soneritics_buckaroo.tpl', 'Y', 'P'),
-                ('Soneritics Buckaroo Creditcards',             'soneritics_buckaroo_creditcards.php',         'views/orders/components/payments/soneritics_buckaroo.tpl',           'soneritics_buckaroo.tpl', 'Y', 'P'),
-                ('Soneritics Buckaroo iDeal',                   'soneritics_buckaroo_ideal.php',               'views/orders/components/payments/soneritics_buckaroo_ideal.tpl',     'soneritics_buckaroo.tpl', 'Y', 'P'),
+            REPLACE INTO ?:payment_processors(processor,        processor_script,                              processor_template,                                                    admin_template,           callback, `type`) VALUES
+                ('Soneritics Buckaroo Bancontact / Mistercash', 'soneritics_buckaroo_bancontact.php',          'views/orders/components/payments/soneritics_buckaroo.tpl',           'soneritics_buckaroo.tpl', 'N', 'P'),
+                ('Soneritics Buckaroo Creditcards',             'soneritics_buckaroo_creditcards.php',         'views/orders/components/payments/soneritics_buckaroo.tpl',           'soneritics_buckaroo.tpl', 'N', 'P'),
+                ('Soneritics Buckaroo iDeal',                   'soneritics_buckaroo_ideal.php',               'views/orders/components/payments/soneritics_buckaroo_ideal.tpl',     'soneritics_buckaroo.tpl', 'N', 'P'),
                 ('Soneritics Buckaroo Afterpay (Digiaccept)',   'soneritics_buckaroo_afterpay_digiaccept.php', 'views/orders/components/payments/soneritics_buckaroo_afterpay.tpl' , 'soneritics_buckaroo.tpl', 'Y', 'P')
         </item>
         <item>
