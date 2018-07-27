@@ -33,7 +33,8 @@ if (defined('PAYMENT_NOTIFICATION')) {
 } else {
     $services = [
         new \Buckaroo\Services\Pay\CreditcardMastercard,
-        new \Buckaroo\Services\Pay\CreditcardVisa
+        new \Buckaroo\Services\Pay\CreditcardVisa,
+        new \Buckaroo\Services\Pay\CreditcardAmericanExpress
     ];
     fn_soneritics_buckaroo_start_payment_with_services($services, $order_info);
 }
