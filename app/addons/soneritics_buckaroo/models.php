@@ -27,11 +27,6 @@ class SoneriticsBuckarooSettings
     /**
      * @var string
      */
-    private $websiteKey;
-
-    /**
-     * @var string
-     */
     private $secretKey;
 
     /**
@@ -44,17 +39,19 @@ class SoneriticsBuckarooSettings
      */
     public function __construct()
     {
-        $this->websiteKey = \Tygh\Registry::get('addons.soneritics_buckaroo.websitekey');
         $this->secretKey = \Tygh\Registry::get('addons.soneritics_buckaroo.secretkey');
         $this->test = \Tygh\Registry::get('addons.soneritics_buckaroo.test') != 'N';
     }
 
     /**
+     * @param int $orderId
      * @return string
      */
-    public function getWebsiteKey(): string
+    public function getWebsiteKey(int $orderId): string
     {
-        return $this->websiteKey;
+        $order_info = fn_get_order_info($orderId);
+        $processorParams = $order_info['payment_method']['processor_params'];
+        return $processorParams['websitekey'] ?? '';
     }
 
     /**

@@ -46,17 +46,18 @@ function fn_soneritics_buckaroo_summary_get_payment_method($paymentId, &$payment
 
 /**
  * Get the current iDeal issuers list
+ * @param string $websiteKey
  * @return array
  * @throws \Tygh\Exceptions\DeveloperException
  */
-function fn_soneritics_buckaroo_get_ideal_issuers()
+function fn_soneritics_buckaroo_get_ideal_issuers(string $websiteKey)
 {
     $settings = new SoneriticsBuckarooSettings;
     $cacheKey = 'soneritics_buckaroo_ideal_cache';
     \Tygh\Registry::registerCache($cacheKey, 3600 * 24, \Tygh\Registry::cacheLevel('time'), true);
 
     if ($settings->isTestMode() || !\Tygh\Registry::isExist($cacheKey)) {
-        $authentication = new \Buckaroo\Authentication\Authentication($settings->getSecretKey(), $settings->getWebsiteKey());
+        $authentication = new \Buckaroo\Authentication\Authentication($settings->getSecretKey(), $websiteKey);
         $buckaroo = new \Buckaroo\Buckaroo($authentication, $settings->isTestMode());
 
         try {
@@ -114,7 +115,7 @@ function fn_soneritics_buckaroo_start_payment(\Buckaroo\Services\Pay\AbstractPay
 function fn_soneritics_buckaroo_start_payment_with_services(array $services, array $orderInfo)
 {
     $settings = new SoneriticsBuckarooSettings;
-    $authentication = new \Buckaroo\Authentication\Authentication($settings->getSecretKey(), $settings->getWebsiteKey());
+    $authentication = new \Buckaroo\Authentication\Authentication($settings->getSecretKey(), $settings->getWebsiteKey($orderInfo['order_id']));
     $buckaroo = new \Buckaroo\Buckaroo($authentication, $settings->isTestMode());
 
     try {
@@ -203,7 +204,7 @@ function fn_soneritics_buckaroo_validate_payment(int $orderId)
         );
     } else {
         $settings = new SoneriticsBuckarooSettings;
-        $authentication = new \Buckaroo\Authentication\Authentication($settings->getSecretKey(), $settings->getWebsiteKey());
+        $authentication = new \Buckaroo\Authentication\Authentication($settings->getSecretKey(), $settings->getWebsiteKey($orderId));
         $buckaroo = new \Buckaroo\Buckaroo($authentication, $settings->isTestMode());
 
         $result = false;

@@ -2,7 +2,7 @@
 <addon scheme="3.0">
     <id>soneritics_buckaroo</id>
     <name>Soneritics Buckaroo</name>
-    <version>1.0</version>
+    <version>2.0</version>
     <default_language>nl</default_language>
     <priority>1000</priority>
     <status>active</status>
@@ -11,11 +11,6 @@
         <sections>
             <section id="general">
                 <items>
-                    <item id="websitekey">
-                        <name>Website key</name>
-                        <type>input</type>
-                        <default_value></default_value>
-                    </item>
                     <item id="secretkey">
                         <name>Secret key</name>
                         <type>input</type>
